@@ -1,0 +1,57 @@
+17:10:47 **** Incremental Build of configuration Debug for project Mini-Project2 ****
+make all 
+Building file: ../Interrupt_Init.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"Interrupt_Init.d" -MT"Interrupt_Init.o" -c -o "Interrupt_Init.o" "../Interrupt_Init.c"
+In file included from ../Libraries.h:15,
+                 from ../Interrupt_Init.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Interrupt_Init.c
+ 
+Building file: ../Mini-Project2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"Mini-Project2.d" -MT"Mini-Project2.o" -c -o "Mini-Project2.o" "../Mini-Project2.c"
+In file included from ../Libraries.h:15,
+                 from ../Mini-Project2.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Mini-Project2.c
+ 
+Building file: ../Seven_Seg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"Seven_Seg.d" -MT"Seven_Seg.o" -c -o "Seven_Seg.o" "../Seven_Seg.c"
+In file included from ../Libraries.h:15,
+                 from ../Seven_Seg.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Seven_Seg.c
+ 
+Building target: Mini-Project2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini-Project2.map -mmcu=atmega32 -o "Mini-Project2.elf"  ./Interrupt_Init.o ./Mini-Project2.o ./Seven_Seg.o   
+Finished building target: Mini-Project2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Mini-Project2.elf  >"Mini-Project2.lss"
+Finished building: Mini-Project2.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Mini-Project2.elf  "Mini-Project2.hex"
+Finished building: Mini-Project2.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Mini-Project2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5722 bytes (17.5% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+17:10:48 Build Finished. 0 errors, 3 warnings. (took 916ms)
+
